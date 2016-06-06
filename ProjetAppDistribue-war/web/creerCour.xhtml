@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Creer cour" >
+                <p:messages autoUpdate="true"/>
+
+                <h:panelGrid id="grid" columns="3" cellpadding="5" >
+                    <h:outputLabel for="nom" value="Nom:" style="font-weight:bold"/>                    
+                    <p:inputText id="nom" value="#{creerCourBean.nom}" required="true" label="Nom"  />
+                    <p:message for="nom" />
+                    
+                    <h:outputLabel for="libele" value="libele:" style="font-weight:bold"/>           
+                    <p:inputText id="libele" value="#{creerCourBean.libele}" required="true" label="Libele"/>
+                    <p:message for="libele" />
+                    
+
+                </h:panelGrid>
+
+                <p:commandButton value="Enregistrer" ajax="false"  validateClient="true" style="margin-right:10px" action="#{creerCourBean.creerCour()}" />
+                <p:button outcome="#{creerCourBean.retourVerSupAdmin()}" id="back" value="Back" /> 
+                 </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

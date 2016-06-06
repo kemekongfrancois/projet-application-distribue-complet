@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+
+        <f:view>
+            <h:link outcome="#{creerCompteMBean.accueil}" value="Accueil"/> 
+
+            <h:form>
+                <p:panel header="Renseigné vous information" >
+                    <h:panelGrid columns="3" style="font-weight:bold" >
+                        <p:outputLabel value="Login:" for="login" />
+                        <p:inputText id="login" value="#{creerCompteMBean.compte.login}" title="Login" required="true" />
+                        <p:message for="login" />
+
+                        <p:outputLabel value="Mot de passe" for="pass" />
+                        <p:password id="pass" value="#{creerCompteMBean.compte.pass}" match="pass2" title="Pass" required="true"/>
+                        <p:message for="pass" />
+
+                        <p:outputLabel value="repeter le mot de passe" for="pass2" />
+                        <p:password id="pass2" value="#{creerCompteMBean.compte.pass}" title="Pass2" required="true"/>
+                        <p:message for="pass2" />
+
+                        <p:outputLabel value="Nom:" for="nom" />
+                        <p:inputText id="nom" value="#{creerCompteMBean.compte.nom}" title="Nom" required="true"/>
+                        <p:message for="nom" />
+
+                        <p:outputLabel value="Prenom:" for="prenom" />
+                        <p:inputText id="prenom" value="#{creerCompteMBean.compte.prenom}" title="Prenom" required="true"/>
+                        <p:message for="prenom" />
+                    </h:panelGrid>
+
+                </p:panel >
+
+
+
+
+                <h1><h:outputText value="Listes des Cours"/></h1>
+                <p:dataTable value="#{creerCompteMBean.allCour}" var="item" >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Choix"/>
+                        </f:facet>
+                        <p:growl id="msgBull" />
+                        <p:selectBooleanCheckbox value="#{item.choix}">
+                            <p:ajax update="msgBull" listener="#{creerCompteMBean.afficheMsg(item.msg)}" />
+                        </p:selectBooleanCheckbox>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nomcour"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nomcour}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Libelecour"/>
+                        </f:facet>
+                        <h:outputText value="#{item.libelecour}"/>
+                    </p:column>
+                </p:dataTable>
+
+
+
+                <p:commandButton value="Enregistrer"  ajax="false" validateClient="true" style="margin-right:10px" action="#{creerCompteMBean.enregistrer}" />
+            </h:form>
+        </f:view>
+
+
+
+
+    </h:body>
+</html>
+
