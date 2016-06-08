@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:element name="compte" type="tns:compte"/>
+
+<xs:element name="cours" type="tns:cours"/>
+
+<xs:element name="creerCompteEtudiant" type="tns:creerCompteEtudiant"/>
+
+<xs:element name="creerCompteEtudiantResponse" type="tns:creerCompteEtudiantResponse"/>
+
+<xs:element name="creerCour" type="tns:creerCour"/>
+
+<xs:element name="creerCourResponse" type="tns:creerCourResponse"/>
+
+<xs:element name="crerCompteAvecCour" type="tns:crerCompteAvecCour"/>
+
+<xs:element name="crerCompteAvecCourResponse" type="tns:crerCompteAvecCourResponse"/>
+
+<xs:element name="findCompte" type="tns:findCompte"/>
+
+<xs:element name="findCompteResponse" type="tns:findCompteResponse"/>
+
+<xs:element name="getAllCompteExceptSupadmin" type="tns:getAllCompteExceptSupadmin"/>
+
+<xs:element name="getAllCompteExceptSupadminResponse" type="tns:getAllCompteExceptSupadminResponse"/>
+
+<xs:element name="getAllCour" type="tns:getAllCour"/>
+
+<xs:element name="getAllCourResponse" type="tns:getAllCourResponse"/>
+
+<xs:element name="getCompteById" type="tns:getCompteById"/>
+
+<xs:element name="getCompteByIdResponse" type="tns:getCompteByIdResponse"/>
+
+<xs:element name="getCompteLoginPass" type="tns:getCompteLoginPass"/>
+
+<xs:element name="getCompteLoginPassResponse" type="tns:getCompteLoginPassResponse"/>
+
+<xs:element name="getCourDuCompte" type="tns:getCourDuCompte"/>
+
+<xs:element name="getCourDuCompteNonInscri" type="tns:getCourDuCompteNonInscri"/>
+
+<xs:element name="getCourDuCompteNonInscriResponse" type="tns:getCourDuCompteNonInscriResponse"/>
+
+<xs:element name="getCourDuCompteResponse" type="tns:getCourDuCompteResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="persist" type="tns:persist"/>
+
+<xs:element name="persistResponse" type="tns:persistResponse"/>
+
+<xs:element name="update" type="tns:update"/>
+
+<xs:element name="updateResponse" type="tns:updateResponse"/>
+
+<xs:complexType name="creerCour">
+<xs:sequence>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="libele" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="creerCourResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompteLoginPass">
+<xs:sequence>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompteLoginPassResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compte">
+<xs:sequence>
+<xs:element name="activer" type="xs:boolean" minOccurs="0"/>
+<xs:element name="idcompte" type="xs:int" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="prenom" type="xs:string" minOccurs="0"/>
+<xs:element name="typecompte" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persist">
+<xs:sequence>
+<xs:element name="arg0" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persistResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCourDuCompteNonInscri">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCourDuCompteNonInscriResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cours" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cours">
+<xs:sequence>
+<xs:element name="idcour" type="xs:int" minOccurs="0"/>
+<xs:element name="libelecour" type="xs:string" minOccurs="0"/>
+<xs:element name="nomcour" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCourDuCompte">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCourDuCompteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cours" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllCour">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllCourResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cours" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllCompteExceptSupadmin">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllCompteExceptSupadminResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCompte">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCompteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="creerCompteEtudiant">
+<xs:sequence>
+<xs:element name="arg0" type="tns:compte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="creerCompteEtudiantResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="update">
+<xs:sequence>
+<xs:element name="arg0" type="tns:compte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompteById">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompteByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crerCompteAvecCour">
+<xs:sequence>
+<xs:element name="compte" type="tns:compte" minOccurs="0"/>
+<xs:element name="listCoursChoisi" type="tns:cours" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crerCompteAvecCourResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

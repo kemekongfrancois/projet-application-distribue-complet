@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_inscription_cour.view.CreerCompteController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="184.0" layoutY="32.0" prefHeight="200.0" prefWidth="100.0" spacing="7.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <TextField fx:id="champLogin" promptText="Login">
+               <tooltip>
+                  <Tooltip text="entrer votre login" />
+               </tooltip></TextField>
+            <PasswordField fx:id="champPass" promptText="Mot de passe">
+               <tooltip>
+                  <Tooltip text="entrer le mot de passe" />
+               </tooltip></PasswordField>
+            <PasswordField fx:id="champPassRep" promptText="repeter le mot de passe">
+               <tooltip>
+                  <Tooltip text="repeter le mot de passe" />
+               </tooltip>
+            </PasswordField>
+            <TextField fx:id="champNom" promptText="Nom">
+               <tooltip>
+                  <Tooltip text="entrer votre nom" />
+               </tooltip></TextField>
+            <TextField fx:id="champPrenom" promptText="Prenom">
+               <tooltip>
+                  <Tooltip text="entrer votre prenom" />
+               </tooltip></TextField>
+            <TableView fx:id="tabCour" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                  <TableColumn fx:id="choiColone" prefWidth="75.0" text="choix" />
+                <TableColumn fx:id="nomColone" prefWidth="111.0" text="Nom du cour" />
+                <TableColumn fx:id="libeleColone" prefWidth="110.0" text="Libélé du cour" />
+              </columns>
+            </TableView>
+            <Button fx:id="bValide" mnemonicParsing="false" onAction="#boutonValider" text="valider" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

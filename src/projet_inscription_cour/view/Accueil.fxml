@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_inscription_cour.view.AccueilController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Accueil" />
+                  <MenuItem mnemonicParsing="false" onAction="#boutonFichierFermer" text="Fermer" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="veille entrer vos paramètre de connection">
+               <VBox.margin>
+                  <Insets left="60.0" top="45.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="champLogin" promptText="login">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+               <tooltip>
+                  <Tooltip text="entrer votre login" />
+               </tooltip>
+            </TextField>
+            <PasswordField fx:id="champPass" promptText="mot de passe">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+               <tooltip>
+                  <Tooltip text="entrer votre mot de passe" />
+               </tooltip>
+            </PasswordField>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="400.0">
+               <children>
+                  <Button fx:id="bConnexion" mnemonicParsing="false" onAction="#boutonConnexion" text="connexion">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="bReinitialise" mnemonicParsing="false" onAction="#boutonReinitialise" text="réinitialiser" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <Hyperlink onAction="#boutonCreerCompte" text="Créer nouveau compte" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

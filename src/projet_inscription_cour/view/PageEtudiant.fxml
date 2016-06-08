@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projet_inscription_cour.view.PageEtudiantController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="194.0" layoutY="42.0" prefHeight="200.0" prefWidth="100.0" spacing="7.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label fx:id="msg" text="Vous pouvez apporter des modifications à votre compte ">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="nom " />
+                  <TextField fx:id="champNom" prefHeight="25.0" prefWidth="242.0" promptText="Nom">
+                     <tooltip>
+                        <Tooltip text="entrer votre nom" />
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="prenom" />
+                  <TextField fx:id="champPrenom" prefHeight="25.0" prefWidth="242.0" promptText="Prenom">
+                     <tooltip>
+                        <Tooltip text="entrer votre prenom" />
+                     </tooltip>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TableView fx:id="tabCour" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="choiColone" prefWidth="75.0" text="choix" />
+                  <TableColumn fx:id="nomColone" prefWidth="111.0" text="Nom du cour" />
+                  <TableColumn fx:id="libeleColone" prefWidth="110.0" text="Libélé du cour" />
+               </columns>
+            </TableView>
+            <Button fx:id="bEnregistrer" mnemonicParsing="false" onAction="#boutonEnregistrer" text="Enregistrer" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

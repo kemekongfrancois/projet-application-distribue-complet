@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_inscription_cour.view.CreerCourController">
+   <children>
+      <VBox>
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="131.0" prefWidth="600.0">
+               <children>
+                  <HBox layoutX="42.0" layoutY="14.0" prefHeight="32.0" prefWidth="590.0" spacing="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label text="nom du cour" />
+                        <TextField fx:id="nomCour" prefHeight="25.0" prefWidth="496.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="42.0" prefHeight="43.0" prefWidth="590.0" spacing="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="42.0">
+                     <children>
+                        <Label text="libélé du cour" />
+                        <TextField fx:id="libeleCour" prefHeight="25.0" prefWidth="493.0" />
+                     </children>
+                  </HBox>
+                  <Button layoutX="242.0" layoutY="92.0" mnemonicParsing="false" onAction="#boutonEnregistrer" text="enregistrer" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
